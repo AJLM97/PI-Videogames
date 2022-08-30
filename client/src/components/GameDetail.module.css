@@ -1,0 +1,60 @@
+.container {
+    background-color: hsla(0, 0%, 19%, 0.75);
+    border: solid hsla(0, 0%, 21%, 0.50) 2px;
+    margin: 30px auto;
+    width: 50rem;
+    border-radius: 10px;
+    padding: 7.5px;
+    text-decoration: none;
+}
+
+.container h1 {
+    color: white;
+    text-align: center;
+}
+
+.container img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.container div{
+    display: inline-flex;
+    color: white;
+    text-align: left;
+    margin: 5px auto;
+    width: 100%;
+}
+
+.container div div span{
+    display: inline-flex;
+    border: solid white 1.5px;
+    color: white;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 4px;
+    font-weight: 500;
+    margin: 5px;
+}
+
+.container div label{
+    width: 130px;
+    margin: auto 0px auto 20px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.container div div{
+    display: inline-block;
+    color: white;
+    width: calc(100% - 150px);
+}
+
+.container .description {
+    color: white;
+    text-align: center;
+    margin: 10px auto 20px;
+    width: calc(100% - 10px);;
+}

@@ -1,0 +1,37 @@
+.nav {
+	width: 100%;
+	background-color: #303030;
+	display: inline-block;
+	display: flex;
+    justify-content: space-between;
+	box-shadow: 0px 10px 10px black;
+}
+
+.nav span {
+	border: none;
+	text-decoration: none;
+	font-weight: 1000;
+	font-size: 20px;
+	color: #C4AF3D;
+}
+
+.linkGames, .linkCreate {
+    text-decoration: none;
+    font-size: 20px;
+	font-weight: 500;
+	cursor: pointer;
+}
+
+.linkGames {
+	color: #fff;
+	padding: 20px;
+}
+
+.linkCreate {
+    color: #C4AF3D;
+	padding: 5px 10px;
+	margin: 10px 0px;
+	border: solid #C4AF3D 5px;
+	border-right: 0px;
+	border-radius: 20px 0px 0px 20px;
+}

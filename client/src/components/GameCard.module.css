@@ -1,0 +1,72 @@
+.card {
+    background-color: hsla(0, 0%, 19%, 0.75);
+    border: solid hsla(0, 0%, 21%, 0.50) 2px;
+    margin: 20px;
+    width: 15rem;
+    border-radius: 10px;
+    text-align: center;
+    padding: 7.5px;
+    text-decoration: none;
+}
+
+h5 {
+    color: white;
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+img {
+    width: calc(100% - 10px);
+    height: 150px;
+    position: relative;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 10px 10px;
+    margin: 5px 5px 0px 5px;
+}
+
+span {
+    grid-column: span 2;
+    border: solid #C4AF3D 1.5px;
+    color: #C4AF3D;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 2px 2px;
+    font-weight: 500;
+}
+
+span:last-child:nth-child(3n - 1) {
+    grid-column-end: -2;
+}
+
+span:nth-last-child(2):nth-child(3n + 1) {
+    grid-column-end: 4;
+}
+
+span:last-child:nth-child(3n - 2) {
+    grid-column-end: 5;
+}
+
+.body {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}
+
+.imageContainer {
+    position: relative;
+}
+
+.imageRating {
+    border-radius: 10px 0px 0px 0px;
+    position: absolute;
+    bottom: 4px;
+    right: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #C4AF3D;
+    background-color: rgba(0, 0, 0, 0.90);
+    padding: 0px 5px 0px 5px;
+}

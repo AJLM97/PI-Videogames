@@ -1,0 +1,38 @@
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter, .search {
+    width: 100%;
+    text-align: center;
+}
+
+.filter {
+    padding-top: 20px;
+}
+
+.filter select, .filter button, .search input, .search button {
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.search input {
+    cursor: text;
+}
+
+.filter select, .search input {
+    color: white;
+    background-color: hsla(0, 0%, 19%, 0.75);
+    border: solid hsla(0, 0%, 21%, 0.50) 2px;
+}
+
+.filter button, .search button {
+    color: #C4AF3D;
+    background-color: hsla(0, 0%, 19%, 0.75);
+    border: solid #C4AF3D 2px;
+}

@@ -1,0 +1,90 @@
+.container {
+    background-color: hsla(0, 0%, 19%, 0.75);
+    border: solid hsla(0, 0%, 21%, 0.50) 2px;
+    margin: 30px auto;
+    width: 50rem;
+    border-radius: 10px;
+    padding: 7.5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.container h1 {
+    color: white;
+    text-align: center;
+}
+
+.container div{
+    color: white;
+    display: inline-flex;
+    width: 100%;
+    margin: 5px auto;
+    text-align: left;
+}
+
+.container div div button{
+    display: inline-flex;
+    border: solid hsla(0, 0%, 100%, 0.5) 1.5px;
+    color: hsla(0, 0%, 100%, 0.25);
+    background-color: Transparent;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 4px;
+    font-weight: 500;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.container div div input, .container div div textarea{
+    display: inline-flex;
+    border: solid white 1.5px;
+    color: white;
+    background-color: Transparent;
+    border-radius: 5px;
+    font-size: 13px;
+    padding: 10px;
+    font-weight: 500;
+    margin: 5px;
+    cursor: select;
+    width: calc(100% - 45px);
+    resize: none;
+}
+
+.container div div span {
+    border: none;
+    display: block;
+    color: #C4AF3D;
+    margin:auto;
+    margin-left: 20px;
+}
+
+.container div div .active{
+    border: solid white 1.5px;
+    color: white;
+}
+
+.container div label{
+    width: 130px;
+    margin: auto 0px auto 20px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.container div div{
+    display: inline-block;
+    color: white;
+    width: calc(100% - 150px);
+}
+
+.button {
+    color: #C4AF3D;
+    background-color: hsla(0, 0%, 19%, 0.75);
+    border: solid #C4AF3D 3px;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 10px 50px;
+    margin: 10px;
+    cursor: pointer;
+}
