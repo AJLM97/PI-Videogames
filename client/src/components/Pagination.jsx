@@ -12,10 +12,7 @@ function topFunction() {
 
 const Pagination = (props) => {
   const itemsPerPage = 15;
-  const pages = [];
-  for (let i = 1; i <= Math.ceil(props.games.length / itemsPerPage); i++) {
-    pages.push(i);
-  }
+  const lastPage = Math.ceil(props.games.length / itemsPerPage);
 
   const indexOfLastItem = props.page * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
@@ -45,9 +42,9 @@ const Pagination = (props) => {
             Prev
         </div>
         <div className={style.actualPage}>
-          {`${props.page} / ${pages.length}`}
+          {`${props.page} / ${lastPage}`}
         </div>
-        <div className={props.page === pages.length ? style.last : style.next} onClick={props.page < pages.length ? handleNextbtn : null}>
+        <div className={props.page === lastPage ? style.last : style.next} onClick={props.page < lastPage ? handleNextbtn : null}>
             Next
         </div>
       </div>
