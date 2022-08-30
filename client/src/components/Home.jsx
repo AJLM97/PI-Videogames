@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getAllGames, getAllGenres } from "../redux/actions";
+import Nav from "./Nav";
 import Pagination from "./Pagination";
 import style from "./Home.module.css";
 
@@ -66,42 +67,43 @@ export class Home extends Component {
   }
   render() {
     return (
-      <div className={style.wrapper}>
-        <div className={style.filter}>
-          <select name="genre" value={this.state.genre} onChange={(e) => this.changeHandler(e)}>
-            <option value="">All Genres</option>
-            {
-              this.props.genres.map((g) => {
+      <>
+        <Nav />
+        <div className={style.wrapper}>
+          <div className={style.filter}>
+            <select name="genre" value={this.state.genre} onChange={(e) => this.changeHandler(e)}>
+              <option value="">All Genres</option>
+              {this.props.genres.map((g) => {
                 return (
                   <option value={g.name} key={g.id}>
                     {g.name}
                   </option>
                 );
-              })
-            }
-          </select>
-          <select name="origin" value={this.state.origin} onChange={(e) => this.changeHandler(e)}>
-            <option value="">Any Origin</option>
-            <option value="Api">Api</option>
-            <option value="Created">Created</option>
-          </select>
-          <select name="order" value={this.state.order} onChange={(e) => this.changeHandler(e)}>
-            <option value="">Order By</option>
-            <option value='Alphabet'>Alphabet</option>
-            <option value='Rating'>Rating</option>
-          </select>
-          <select name="type" value={this.state.type} onChange={(e) => this.changeHandler(e)}>
-            <option value='Ascending'>Ascending</option>
-            <option value='Descending'>Descending</option>
-          </select>
-          <button name="reset" onClick={(e) => this.changeHandler(e)}>Reset Filter</button>
+              })}
+            </select>
+            <select name="origin" value={this.state.origin} onChange={(e) => this.changeHandler(e)}>
+              <option value="">Any Origin</option>
+              <option value="Api">Api</option>
+              <option value="Created">Created</option>
+            </select>
+            <select name="order" value={this.state.order} onChange={(e) => this.changeHandler(e)}>
+              <option value="">Order By</option>
+              <option value='Alphabet'>Alphabet</option>
+              <option value='Rating'>Rating</option>
+            </select>
+            <select name="type" value={this.state.type} onChange={(e) => this.changeHandler(e)}>
+              <option value='Ascending'>Ascending</option>
+              <option value='Descending'>Descending</option>
+            </select>
+            <button name="reset" onClick={(e) => this.changeHandler(e)}>Reset Filter</button>
+          </div>
+          <div className={style.search}>
+            <input name="search" value={this.state.search} onChange={(e) => this.changeHandler(e)} type="text" placeholder='Search Game...' />
+            <button type="submit" onClick={this.searchHandler}> Search </button>
+          </div>
+          <Pagination className={style.pagination} games={this.state.genre || this.state.origin || this.state.order || this.state.type ? this.state.filtered : this.props.games} changePage={this.changePage} page={this.state.page} />
         </div>
-        <div className={style.search}>
-          <input name="search" value={this.state.search} onChange={(e) => this.changeHandler(e)} type="text" placeholder='Search Game...' />
-          <button type="submit" onClick={this.searchHandler}> Search </button>
-        </div>
-        <Pagination className={style.pagination} games={this.state.genre || this.state.origin || this.state.order || this.state.type ? this.state.filtered : this.props.games} changePage={this.changePage} page={this.state.page} />
-      </div>
+      </>
     );
   }
 }

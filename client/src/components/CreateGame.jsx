@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from 'react-redux'
 import { createGame, getAllGenres } from "../redux/actions";
 import { useHistory } from "react-router-dom";
+import Nav from "./Nav";
 import style from "./CreateGame.module.css";
 
 const CreateGame = () => {
@@ -118,63 +119,62 @@ const CreateGame = () => {
         }
     }
     return (
-        <div className={style.container} >
-            <h1>Create Game</h1>
-            <div>
-                <label>Name:</label>
+        <>
+            <Nav />
+            <div className={style.container}>
+                <h1>Create Game</h1>
                 <div>
-                    <input name="name" type="text" value={input.name} placeholder="Game Name..." onChange={(e) => handleChange(e)} />
-                    {errors.name && <span>{errors.name}</span>}
+                    <label>Name:</label>
+                    <div>
+                        <input name="name" type="text" value={input.name} placeholder="Game Name..." onChange={(e) => handleChange(e)} />
+                        {errors.name && <span>{errors.name}</span>}
+                    </div>
                 </div>
-            </div>
-            <div>
-                <label>Image:</label>
                 <div>
-                    <input name="image" type="text" value={input.image} placeholder="Image URL..." onChange={(e) => handleChange(e)} />
-                    {errors.image && <span>{errors.image}</span>}
+                    <label>Image:</label>
+                    <div>
+                        <input name="image" type="text" value={input.image} placeholder="Image URL..." onChange={(e) => handleChange(e)} />
+                        {errors.image && <span>{errors.image}</span>}
+                    </div>
                 </div>
-            </div>
-            <div>
-                <label>Released Date:</label>
                 <div>
-                    <input name="released" type="date" value={input.released} onChange={(e) => handleChange(e)} />
-                    {errors.released && <span>{errors.released}</span>}
+                    <label>Released Date:</label>
+                    <div>
+                        <input name="released" type="date" value={input.released} onChange={(e) => handleChange(e)} />
+                        {errors.released && <span>{errors.released}</span>}
+                    </div>
                 </div>
-            </div>
-            <div>
-                <label>Rating:</label>
                 <div>
-                    <input name="rating" type="number" value={input.rating} placeholder="Rating 0-5..." min="0" max="5" onChange={(e) => handleChange(e)} />
-                    {errors.rating && <span>{errors.rating}</span>}
+                    <label>Rating:</label>
+                    <div>
+                        <input name="rating" type="number" value={input.rating} placeholder="Rating 0-5..." min="0" max="5" onChange={(e) => handleChange(e)} />
+                        {errors.rating && <span>{errors.rating}</span>}
+                    </div>
                 </div>
-            </div>
-            <div>
-                <label>Genre/s:</label>
                 <div>
-                    {
-                        genres?.map(genre => <button className={input.genresButtons[genre.id] ? style.active : ''} onClick={() => selectGenre(genre.id)} key={genre.id + genre.name}>{genre.name}</button>)
-                    }
-                    {errors.genres && <span>{errors.genres}</span>}
+                    <label>Genre/s:</label>
+                    <div>
+                        {genres?.map(genre => <button className={input.genresButtons[genre.id] ? style.active : ''} onClick={() => selectGenre(genre.id)} key={genre.id + genre.name}>{genre.name}</button>)}
+                        {errors.genres && <span>{errors.genres}</span>}
+                    </div>
                 </div>
-            </div>
-            <div>
-                <label>Platform/s:</label>
                 <div>
-                    {
-                        platforms?.map(platform => <button className={input.platformsButtons[platform] ? style.active : ''} onClick={() => selectPlatform(platform)} key={platform}>{platform}</button>)
-                    }
-                    {errors.platforms && <span>{errors.platforms}</span>}
+                    <label>Platform/s:</label>
+                    <div>
+                        {platforms?.map(platform => <button className={input.platformsButtons[platform] ? style.active : ''} onClick={() => selectPlatform(platform)} key={platform}>{platform}</button>)}
+                        {errors.platforms && <span>{errors.platforms}</span>}
+                    </div>
                 </div>
-            </div>
-            <div>
-                <label>Description:</label>
                 <div>
-                    <textarea name="description" cols="50" rows="10" value={input.description} placeholder="Description..." onChange={(e) => handleChange(e)} />
-                    {errors.description && <span>{errors.description}</span>}
+                    <label>Description:</label>
+                    <div>
+                        <textarea name="description" cols="50" rows="10" value={input.description} placeholder="Description..." onChange={(e) => handleChange(e)} />
+                        {errors.description && <span>{errors.description}</span>}
+                    </div>
                 </div>
+                <button className={style.button} onClick={handleSubmit}> CREATE GAME </button>
             </div>
-            <button className={style.button} onClick={handleSubmit}> CREATE GAME </button>
-        </div >
+        </>
     );
 }
 
