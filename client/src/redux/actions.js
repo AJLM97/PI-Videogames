@@ -7,28 +7,28 @@ export const GET_ALL_GENRES = 'GET_ALL_GENRES';
 
 export const getAllGames = (nameGame = "") => {
     return async (dispatch) => {
-        const videoGamesApi = await axios.get(`http://localhost:3001/videogames?name=${nameGame}`);
+        const videoGamesApi = await axios.get(`/videogames?name=${nameGame}`);
         dispatch({type: GET_ALL_GAMES, payload: videoGamesApi.data});
     };
 };
 
 export const getGameDetail = (idGame) => {
     return async (dispatch) => {
-        const videoGamesApi = await axios.get(`http://localhost:3001/videogames/${idGame}`);
+        const videoGamesApi = await axios.get(`/videogames/${idGame}`);
         dispatch({type: GET_GAME_DETAILS, payload: videoGamesApi.data});
     };
 };
 
 export const createGame = (detail) => {
     return async (dispatch) => {
-        const videoGamesApi = await axios.post('http://localhost:3001/videogames', detail);
+        const videoGamesApi = await axios.post('/videogames', detail);
         dispatch({type: CREATE_GAME, payload: videoGamesApi.data});
     };
 };
 
 export const getAllGenres = () => {
     return async (dispatch) => {
-        const videoGamesApi = await axios.get("http://localhost:3001/genres");
+        const videoGamesApi = await axios.get("/genres");
         dispatch({type: GET_ALL_GENRES, payload: videoGamesApi.data});
     };
 };
